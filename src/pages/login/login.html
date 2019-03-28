@@ -1,0 +1,45 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>MyRECS</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+  <img class="logo" src="../../assets/imgs/RECS.png" alt="Ionic Framework logo">
+
+  
+  <h1>Welcome</h1>
+  <p>Please log in to continue</p>
+
+  <ion-list>
+  
+  <ion-item no-margin no-padding >
+      <ion-label floating>User Email</ion-label>
+    <ion-input type ="text" [(ngModel)]="user.email"></ion-input>
+  </ion-item>
+
+  <ion-item no-margin no-padding>
+    <ion-label floating>Password</ion-label>
+    <ion-input type ="password" [(ngModel)]="user.password"></ion-input>
+  </ion-item> 
+
+
+    <ion-item padding-top = 10px no-margin no-padding>
+    <ion-label>Select Role</ion-label>
+    <ion-select [(ngModel)]="user.usertype">
+      <ion-option value="recs">RECS Consultant</ion-option>
+      <ion-option value="mp">Medical Provider</ion-option>
+    </ion-select>
+  </ion-item>
+
+
+  <button ion-button (click)="login(user)" block margin-top>Login</button>
+  <button ion-button (click)="register()" block>Register</button>
+
+  </ion-list>
+
+</ion-content>
