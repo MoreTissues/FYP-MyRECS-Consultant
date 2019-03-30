@@ -1,0 +1,237 @@
+<ion-header>
+
+    <ion-navbar>
+      <ion-title>Clinical</ion-title>
+    </ion-navbar>
+  
+  </ion-header>
+  
+  
+  <ion-content>
+      <form [formGroup]="form">
+  <ion-list>
+      
+      <ion-item>
+          <ion-label>Case ID - </ion-label>
+          <ion-input type="text" formControlName="id" [(ngModel)]="caseID" readonly>{{caseID}}</ion-input>
+      </ion-item>
+    <p padding-left=8px>Please review the patient's clinical.</p>
+    <h1 style='text-align: center'>Medication</h1>
+    <ion-card>
+      <ion-item>
+        <ion-label stacked>Medication Name</ion-label>
+        <ion-input type="text" [(ngModel)]="clinicalName" formControlName="name" readonly></ion-input>
+      </ion-item>
+    </ion-card>
+
+    <ion-card>
+        <ion-item>
+          <ion-label stacked>Frequency (tds)</ion-label>
+          <ion-input type="number" [(ngModel)]="clinicalFreq" formControlName="freq" readonly></ion-input>
+        </ion-item>
+      </ion-card>
+
+      <ion-card>
+          <ion-item>
+            <ion-label stacked>Time Given</ion-label>
+            <ion-input type="time" displayFormat="h:mm A" [(ngModel)]="clinicalTimeGiven" formControlName="timeGiven" readonly></ion-input>
+          </ion-item>
+        </ion-card>
+
+        <ion-card>
+            <ion-item>
+              <ion-label stacked>Time Completed</ion-label>
+              <ion-input type="time" displayFormat="h:mm A" [(ngModel)]="clinicalTimeComplete" formControlName="timeComplete" readonly></ion-input>
+          </ion-item>
+          </ion-card>
+
+          <ion-card>
+              <ion-item>
+                <ion-label stacked>Reaction</ion-label>
+                <ion-input type="text" [(ngModel)]="clinicalReaction" formControlName="reaction" readonly></ion-input>
+              </ion-item>
+            </ion-card>
+
+  </ion-list>
+
+  <hr>
+  <h1 style='text-align: center'>Pain Score Progression (PSP)</h1>
+  <hr>
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+        <ion-label>Details</ion-label>
+      </ion-col>
+      <ion-col>
+        <ion-label style="text-align:center">Time</ion-label>
+      </ion-col>
+      <ion-col>
+        <ion-label style="text-align:center" >Score</ion-label>
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col>
+        <ion-label>Incident</ion-label>
+      </ion-col>
+      <ion-col>
+        <ion-input type="time" displayFormat="h:mm A" [(ngModel)]="clinicalIncidentTime" formControlName="incidentTime" readonly></ion-input>
+      </ion-col>
+      <ion-col>
+        <ion-input type="number" style="text-align:center" [(ngModel)]="clinicalIncidentScore" formControlName="incidentScore" readonly></ion-input>
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col>
+        <ion-label>Arrival (KK/GP)</ion-label>
+      </ion-col>
+      <ion-col>
+        <ion-input type="time" displayFormat="h:mm A" [(ngModel)]="clinicalArrival1Time" formControlName="arrival1Time" readonly></ion-input>
+      </ion-col>
+      <ion-col>
+        <ion-input type="number" [(ngModel)]="clinicalArrival1Score" formControlName="arrival1Score" readonly></ion-input>
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col>
+        <ion-label>Analgesia</ion-label>
+      </ion-col>
+      <ion-col>
+        <ion-input type="time" displayFormat="h:mm A" [(ngModel)]="clinicalAnalgesia1Time" formControlName="analgesia1Time" readonly></ion-input>
+      </ion-col>
+      <ion-col>
+        <ion-input type="number" [(ngModel)]="clinicalAnalgesia1Score" formControlName="analgesia1Score" readonly></ion-input>
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col>
+        <ion-label>Arrival (ED)</ion-label>
+      </ion-col>
+      <ion-col>
+        <ion-input type="time" displayFormat="h:mm A" [(ngModel)]="clinicalArrival2Time" formControlName="arrival2Time" readonly></ion-input>
+      </ion-col>
+      <ion-col>
+        <ion-input type="number" [(ngModel)]="clinicalArrival2Score" formControlName="arrival2Score" readonly></ion-input>
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col>
+        <ion-label>Analgesia 2</ion-label>
+      </ion-col>
+      <ion-col>
+        <ion-input type="time" displayFormat="h:mm A" [(ngModel)]="clinicalAnalgesia2Time" formControlName="analgesia2Time" readonly></ion-input>
+      </ion-col>
+      <ion-col>
+        <ion-input type="number" [(ngModel)]="clinicalAnalgesia2Score" formControlName="analgesia2Score" readonly></ion-input>
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col>
+        <ion-label>Currently</ion-label>
+      </ion-col>
+      <ion-col>
+        <ion-input type="time" displayFormat="h:mm A" [(ngModel)]="clinicalCurrentlyTime" formControlName="currentlyTime" readonly></ion-input>
+      </ion-col>
+      <ion-col>
+        <ion-input type="number" [(ngModel)]="clinicalCurrentlyScore" formControlName="currentlyScore" readonly></ion-input>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <hr>
+  <h1 style='text-align: center'>SBR</h1>
+  <ion-list>
+  
+    <ion-card>
+      <ion-item>
+        <ion-label stacked>20WBTC</ion-label>
+        <ion-input type="number" [(ngModel)]="clinical20WBTC" formControlName="WBCT" readonly></ion-input>
+      </ion-item>
+    </ion-card>
+
+    <ion-card>
+        <ion-item>
+          <ion-label stacked>WBC</ion-label>
+          <ion-input type="number" [(ngModel)]="clinicalWBC" formControlName="WBC" readonly></ion-input>
+        </ion-item>
+      </ion-card>
+
+      <ion-card>
+          <ion-item>
+            <ion-label stacked>HB</ion-label>
+            <ion-input type="number" [(ngModel)]="clinicalHB" formControlName="HB" readonly></ion-input>
+          </ion-item>
+        </ion-card>
+
+        <ion-card>
+            <ion-item>
+              <ion-label stacked>PLT</ion-label>
+              <ion-input type="number" [(ngModel)]="clinicalPLT" formControlName="PLT" readonly></ion-input>
+            </ion-item>
+          </ion-card>
+
+          <ion-card>
+              <ion-item>
+                <ion-label stacked>APTT</ion-label>
+                <ion-input type="number"[(ngModel)]="clinicalAPTT" formControlName="APTT" readonly></ion-input>
+              </ion-item>
+            </ion-card>
+
+  </ion-list>
+
+  <hr>
+  <h1 style='text-align: center'>SCPOC</h1>
+  <ion-list>
+  
+    <ion-card>
+      <ion-item>
+        <ion-label stacked>GSC</ion-label>
+        <ion-input type="number" [(ngModel)]="clinicalGSC" formControlName="GSC" readonly></ion-input>
+      </ion-item>
+    </ion-card>
+
+    <ion-card>
+        <ion-item>
+          <ion-label stacked>BRF</ion-label>
+          <ion-input type="number" [(ngModel)]="clinicalBRF" formControlName="BRF" readonly></ion-input>
+        </ion-item>
+      </ion-card>
+
+      <ion-card>
+          <ion-item>
+            <ion-label stacked>PSP</ion-label>
+            <ion-input type="number" [(ngModel)]="clinicalPSP" formControlName="PSP" readonly></ion-input>
+          </ion-item>
+        </ion-card>
+
+        <ion-card>
+            <ion-item>
+              <ion-label stacked>RR</ion-label>
+              <ion-input type="number" [(ngModel)]="clinicalRR" formControlName="RR" readonly></ion-input>
+            </ion-item>
+          </ion-card>
+
+          <ion-card>
+              <ion-item>
+                <ion-label stacked>API</ion-label>
+                <ion-input type="number" [(ngModel)]="clinicalAPI" formControlName="API" readonly></ion-input>
+              </ion-item>
+            </ion-card>
+
+  </ion-list>
+
+  </form>
+
+  
+  </ion-content>
+
+  <ion-footer>
+      <ion-toolbar position="bottom">
+          <button ion-button round style="width: 100%">Save</button>
+        </ion-toolbar>
+  </ion-footer>

@@ -1,0 +1,23 @@
+
+<ion-header>
+
+  <ion-navbar>
+    <button ion-button menuToggle>
+        <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Chatting Area</ion-title>
+</ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <p>Please Enter Username to proceed</p>
+  <ion-item>
+  <ion-label floating>Username</ion-label>
+  <ion-input type='text' [(ngModel)]="username"></ion-input>
+</ion-item>
+
+<button ion-button block outline (click)='loginUser()'>Proceed</button>
+</ion-content>
+

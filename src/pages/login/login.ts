@@ -1,3 +1,4 @@
+import { CaseListPage } from './../NavigationBarPages/case-list/case-list';
 import { IonicPage, NavController } from 'ionic-angular';
 import { Observable } from 'rxjs';
 
@@ -6,7 +7,7 @@ import { AngularFireAuth } from '@angular/fire/auth';
 
 import { User } from '../../models/user';
 import { AuthProvider } from '../../providers/auth/auth';
-import { RegisterPage } from '../register/register';
+import { RegisterPage } from '../Registration/register/register';
 
 @IonicPage()
 @Component({
@@ -24,10 +25,10 @@ export class LoginPage {
 			const result = await this.afAuth.auth.signInWithEmailAndPassword(user.email, user.password);
 			if (result && user.usertype == 'recs') {
 				this._AUTH.showAlertSucceed();
-				//this.navCtrl.setRoot(CaseListPage);
+				this.navCtrl.setRoot(CaseListPage);
 			} else if (result && user.usertype == 'mp') {
 				this._AUTH.showAlertSucceed();
-				//this.navCtrl.setRoot(CaseListPage);
+				this.navCtrl.setRoot(CaseListPage);
 			}
 		} catch (e) {
 			console.error(e);

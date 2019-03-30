@@ -1,0 +1,145 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Event</ion-title>
+  </ion-navbar>
+
+
+</ion-header>
+
+
+<ion-content>
+    <form [formGroup]="form">
+    <ion-item>
+        <ion-label>Case ID - </ion-label>
+        <ion-input type="text" formControlName="id" [(ngModel)]="caseID" readonly>{{caseID}}</ion-input>
+    </ion-item>
+  <p padding-left=8px>Please review the patient's event.</p>
+
+  
+  <ion-list>
+
+    <ion-card>
+      <ion-item>
+        <ion-label stacked>Incident Location</ion-label>
+        <ion-input type="text" formControlName="incidentLocation" [(ngModel)]="eventIncidentLocation" readonly></ion-input>
+      </ion-item>
+    </ion-card>
+
+    <ion-card>
+      <ion-item>
+        <ion-label stacked>Name</ion-label>
+        <ion-input type="text" formControlName="name" [(ngModel)]="eventName" readonly></ion-input>
+      </ion-item>
+    </ion-card>
+
+    <p padding-left=8px>Date and Time of Incident</p>
+    <ion-row>
+      <ion-col>
+        <ion-card>
+          <ion-item>
+            <ion-label stacked>Date</ion-label>
+            <ion-input type="date" displayFormat="MMM DD YYYY" [(ngModel)]="eventDateIncident" formControlName="dateIncident" readonly></ion-input>
+          </ion-item>
+
+        </ion-card>
+      </ion-col>
+
+      <ion-col>
+        <ion-card>
+          <ion-item>
+            <ion-label stacked>Time</ion-label>
+            <ion-input type="time" displayFormat="h:mm A" [(ngModel)]="eventTimeIncident" formControlName="timeIncident" readonly></ion-input>
+          </ion-item>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+
+    <ion-item>
+      <ion-label stacked>Activity before incident</ion-label>
+      <ion-textarea placeholder="Enter a description" formControlName="activity" [(ngModel)]="eventActivity" readonly></ion-textarea>
+    </ion-item>
+
+    <p padding-left=8px>Body Affected:</p>
+
+    <ion-row>
+      <ion-col>
+        <ion-item>
+          <ion-label style="font-size: 12px">Feet</ion-label>
+          <ion-checkbox color="dark" formControlName="feet" [(ngModel)]="eventFeet" disabled></ion-checkbox>
+        </ion-item>
+      </ion-col>
+
+      <ion-col>
+        <ion-item>
+          <ion-label style="font-size: 12px">Ankle</ion-label>
+          <ion-checkbox color="dark" formControlName="ankle" [(ngModel)]="eventAnkle" disabled></ion-checkbox>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col>
+        <ion-item>
+          <ion-label style="font-size: 12px">Leg</ion-label>
+          <ion-checkbox color="dark" formControlName="leg" [(ngModel)]="eventLeg" disabled></ion-checkbox>
+        </ion-item>
+      </ion-col>
+
+      <ion-col>
+        <ion-item>
+          <ion-label style="font-size: 12px">Hand</ion-label>
+          <ion-checkbox color="dark" formControlName="hand" [(ngModel)]="eventHand" disabled></ion-checkbox>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col>
+        <ion-item>
+          <ion-label style="font-size: 12px">Finger</ion-label>
+          <ion-checkbox color="dark" formControlName="finger" [(ngModel)]="eventFinger" disabled></ion-checkbox>
+        </ion-item>
+      </ion-col>
+
+      <ion-col>
+        <ion-item>
+          <ion-label style="font-size: 12px">Abdomen</ion-label>
+          <ion-checkbox color="dark" formControlName="abdomen" [(ngModel)]="eventAbdomen" disabled></ion-checkbox>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col>
+        <ion-item>
+          <ion-label style="font-size: 12px">Chest</ion-label>
+          <ion-checkbox color="dark" formControlName="chest" [(ngModel)]="eventChest" disabled></ion-checkbox>
+        </ion-item>
+      </ion-col>
+
+      <ion-col>
+        <ion-item>
+          <ion-label style="font-size: 12px">Private Part</ion-label>
+          <ion-checkbox color="dark"  formControlName="privatepart" [(ngModel)]="eventPrivatePart" disabled></ion-checkbox>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <ion-card>
+          <ion-item>
+            <ion-label stacked>Others (If there is any)</ion-label>
+            <ion-input type="text" value="" formControlName="others" [(ngModel)]="eventOthers" readonly></ion-input>
+          </ion-item>
+        </ion-card>
+
+      </ion-col>
+    </ion-row>
+  </ion-list>
+
+    <ion-toolbar position="bottom">
+      <button ion-button round style="width: 100%">Save & Next</button>
+    </ion-toolbar>
+</form>
+</ion-content>

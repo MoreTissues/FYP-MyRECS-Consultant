@@ -1,0 +1,46 @@
+<ion-header>
+
+  <ion-navbar>
+      <button ion-button menuToggle>
+          <ion-icon name="menu"></ion-icon>
+      </button>
+      <ion-title>Case Consultation</ion-title>
+  </ion-navbar>
+
+  <ion-item>
+      <p>Welcome: {{(profileData | async)?.username}}</p>
+      <!-- <button class="add" ion-button item-right icon-right margin-bottom color="primary"
+          (click)="openAddCaseListPage()">
+          Add a new consultant case
+          <ion-icon name="add"></ion-icon>
+      </button> -->
+      
+  </ion-item>
+</ion-header>
+
+<ion-content>
+  <ion-searchbar animated></ion-searchbar>
+  <hr>
+  <ion-label padding-left=8px><b>VIEW: </b></ion-label>
+  <button ion-button color="primary" item-right (click)="loadPatientDetails()">Patient</button>
+  <button ion-button color="primary" item-right (click)="loadEventDetails()">Event</button>
+  <button ion-button color="primary" item-right (click)="loadHistoryDetails()">History</button>
+  <button ion-button color="primary" item-right (click)="loadSpeciesDetails()">Species</button>
+  <button ion-button color="primary" item-right (click)="loadClinicalDetails()">Clinical</button>
+  <button ion-button color="primary" item-right (click)="loadDefault()">Default</button>
+
+  <button ion-button color="primary" hidden item-right (click)="sendNotificationWithActionButtonsAndDeepLink()">Send Noti</button>
+  <button ion-button color="primary" hidden item-right (click)="sendNotificationwithImage()">Send Noti</button>
+  <ion-item *ngFor="let item of items">
+      <ion-toggle color="danger" checked="true" item-left></ion-toggle>
+      <ion-label> {{ item.caseID }} </ion-label>
+      <button ion-button color="primary" item-right (click)="editPatient({ record: item })" [disabled]="disableButtonPatient">P</button>
+      <button ion-button color="primary" item-right (click)="editEvent({ record: item })" [disabled]="disableButtonEvent">E</button>
+      <button ion-button color="primary" item-right (click)="editHistory({ record: item })" [disabled]="disableButtonHistory">H</button>
+      <button ion-button color="primary" item-right (click)="editSpecies({ record: item })" [disabled]="disableButtonSpecies" >S</button>
+      <button ion-button color="primary" item-right disabled >M</button>
+      <button ion-button color="primary" item-right (click)="editClinical({ record: item })"[disabled]="disableButtonClinical" >C</button>
+      <button ion-button color="danger" item-right (click)="editPatient({ record: item })" disabled>D</button>
+  </ion-item>
+
+</ion-content>

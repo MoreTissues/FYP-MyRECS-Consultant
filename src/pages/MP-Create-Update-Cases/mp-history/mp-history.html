@@ -1,0 +1,119 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>History</ion-title>
+  </ion-navbar>
+
+ 
+</ion-header>
+
+
+<ion-content>
+    <form [formGroup]="form">
+    <p padding-left=8px>Please review the patient's history.</p>
+    <ion-item>
+        <ion-label>Case ID - </ion-label>
+        <ion-input type="text" formControlName="id" [(ngModel)]="caseID" readonly>{{caseID}}</ion-input>
+    </ion-item>
+
+        <p padding-left=8px>What was done to affected area:</p>
+        
+     <!--    <div *ngIf="optionsAffect.length > 0">
+            <ion-item *ngFor="let member of optionsAffect">
+              <ion-label>{{member.name}}</ion-label>
+              <ion-checkbox color="dark" (click)="selectMember(member)" [(ngModel)]="member.checked" formControlName="member"></ion-checkbox>
+            </ion-item>
+          </div>
+          <ion-item hidden>
+          <ion-label padding-left=8px>Options Selected:</ion-label>
+          <ion-label padding-left=8px text-wrap >{{selectValue}}</ion-label>
+          </ion-item> -->
+
+          <ion-item *ngIf="isEdited" >
+              <ion-label padding-left=8px>Options Selected:</ion-label>
+              <ion-label padding-left=8px text-wrap >{{selectValue01}}</ion-label>
+          </ion-item>
+          
+
+    <ion-card>
+        <ion-item>
+            <ion-label stacked>Others (If there is any)</ion-label>
+            <ion-input type="text" value="" formControlName="othersAffectedArea" [(ngModel)]="historyOthersAffectedArea" readonly></ion-input>
+          </ion-item>
+    </ion-card>
+
+    <hr>
+
+    <p padding-left=8px>Present Conditions:</p>
+    <!-- <div *ngIf="optionsConditions.length > 0">
+        <ion-item *ngFor="let member1 of optionsConditions">
+          <ion-label>{{member1.name}}</ion-label>
+          <ion-checkbox color="dark" (click)="selectMember1(member1)" [(ngModel)]="member1.checked" formControlName="member1"></ion-checkbox>
+        </ion-item>
+      </div>
+      <ion-item hidden>
+        <ion-label padding-left=8px>Options Selected:</ion-label>
+        <ion-label padding-left=8px text-wrap >{{selectValue1}}</ion-label>
+        </ion-item>
+ -->
+        <ion-item *ngIf="isEdited" >
+            <ion-label padding-left=8px>Options Selected:</ion-label>
+            <ion-label padding-left=8px text-wrap >{{selectValue02}}</ion-label>
+        </ion-item>
+
+    <ion-card>
+        <ion-item>
+            <ion-label stacked>Others (If there is any)</ion-label>
+            <ion-input type="text" value="" formControlName="othersPresentCondition" [(ngModel)]="historyOthersPresentCondition" readonly></ion-input>
+          </ion-item>
+    </ion-card>
+
+    <hr>
+
+    <p padding-left=8px>General Examination:</p>
+    <!-- <div *ngIf="optionsConditions.length > 0">
+        <ion-item *ngFor="let member2 of optionsGeneral">
+          <ion-label>{{member2.name}}</ion-label>
+          <ion-checkbox color="dark" (click)="selectMember2(member2)" [(ngModel)]="member2.checked" formControlName="member2"></ion-checkbox>
+        </ion-item>
+      </div>
+      <ion-item hidden>
+        <ion-label padding-left=8px>Options Selected:</ion-label>
+        <ion-label padding-left=8px text-wrap >{{selectValue2}}</ion-label>
+        </ion-item> -->
+
+        <ion-item *ngIf="isEdited" >
+            <ion-label padding-left=8px>Option Selected:</ion-label>
+            <ion-label padding-left=8px text-wrap >{{selectValue03}}</ion-label>
+        </ion-item>
+
+    <p padding-left=8px>Etc:</p>
+    <ion-card>
+        <ion-item>
+            <ion-label stacked>Allergies</ion-label>
+            <ion-input type="text" formControlName="allergies" [(ngModel)]="historyAllergies" readonly></ion-input>
+          </ion-item>
+    </ion-card>
+
+    <ion-card>
+        <ion-item>
+            <ion-label stacked>Medical History</ion-label>
+            <ion-input type="text" formControlName="medicalHistory" [(ngModel)]="historyMedicalHistory" readonly></ion-input>
+          </ion-item>
+    </ion-card>
+
+    <ion-card>
+        <ion-item>
+            <ion-label stacked>Medication currently in use</ion-label>
+            <ion-input type="text" formControlName="medicationUse" [(ngModel)]="historyMedicationUse" readonly></ion-input>
+          </ion-item>
+    </ion-card>
+
+    <ion-toolbar position="bottom">
+      <button ion-button round style="width: 100%">Save & Next</button>
+    </ion-toolbar>
+   
+  </form>
+</ion-content>
+
+    

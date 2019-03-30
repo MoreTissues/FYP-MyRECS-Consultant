@@ -1,0 +1,71 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Add New Case</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+  <form [formGroup]="form">
+  <p padding-left=8px>Make sure all sections are completely filled</p>
+  <ion-item>
+      <ion-label>Case ID - </ion-label>
+      <ion-input type="text" formControlName="id" [(ngModel)]="caseID" readonly>{{caseID}}</ion-input>
+  </ion-item>
+  <ion-list>
+    <ion-card>
+      <ion-item>
+        <ion-title start>Patient Details</ion-title>
+        <button ion-button color="primary" item-right (click)="goToPatientDetailsPage()">Add</button>
+        <button ion-button color="secondary" item-right>Edit</button>
+      </ion-item>
+
+    </ion-card>
+
+    <ion-card>
+      <ion-item>
+        <ion-title start>Event Details</ion-title>
+        <button ion-button color="primary" item-right (click)="goToEventPage()">Add</button>
+        <button ion-button color="secondary" item-right>Edit</button>
+      </ion-item>
+    </ion-card>
+
+    <ion-card>
+      <ion-item>
+        <ion-title start>History Details</ion-title>
+        <button ion-button color="primary" item-right (click)="goToHistoryPage()">Add</button>
+        <button ion-button color="secondary" item-right>Edit</button>
+      </ion-item>
+    </ion-card>
+
+    <ion-card>
+      <ion-item>
+        <ion-title start>Species ID Details</ion-title>
+        <button ion-button color="primary" item-right (click)="gotToSpeciesIDPage()">Add</button>
+        <button ion-button color="secondary" item-right>Edit</button>
+      </ion-item>
+    </ion-card>
+
+    <ion-card>
+        <ion-item>
+            <ion-title start>Management Details</ion-title>
+            <button ion-button color="primary" item-right disabled>View</button>
+        </ion-item>
+    </ion-card>
+
+    <ion-card>
+        <ion-item>
+            <ion-title start>Clinical Details</ion-title>
+            <button ion-button color="primary" item-right (click)="goToClinicalPage()">Add</button>
+            <button ion-button color="secondary" item-right>Edit</button>
+        </ion-item>
+    </ion-card>
+   
+  </ion-list>
+
+  <button ion-button color="dark" round full (click)="saveEntry()">Submit Case</button>
+
+</form>
+</ion-content>

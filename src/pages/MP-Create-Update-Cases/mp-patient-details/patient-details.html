@@ -1,0 +1,141 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Patient Details</ion-title>
+  </ion-navbar>
+  </ion-header>
+
+<ion-content>
+
+
+  <form [formGroup]="form">
+    <ion-item>
+        <ion-label>Case ID - </ion-label>
+        <ion-input type="text" formControlName="id" [(ngModel)]="caseID" readonly>{{caseID}}</ion-input>
+    </ion-item>
+    <p padding-left=8px>Please review the patient's details.</p>
+    <ion-list>
+      <ion-card>
+        <ion-item>
+          <ion-label stacked>Identity Number</ion-label>
+          <ion-input type="text" [(ngModel)]="patientIC" formControlName="ic" readonly></ion-input>
+        </ion-item>
+      </ion-card>
+
+      <ion-card>
+        <ion-item>
+          <ion-label stacked>Full Name</ion-label>
+          <ion-input type="text" [(ngModel)]="patientFullName" formControlName="fullname" readonly></ion-input>
+        </ion-item>
+      </ion-card>
+
+      <ion-row>
+        <ion-col>
+          <ion-card>
+            <ion-item>
+              <ion-label stacked>Birthday</ion-label>
+              <ion-input type="date" displayFormat="MMM DD YYYY" [(ngModel)]="patientDOB" formControlName="dob" readonly></ion-input>
+            </ion-item>
+
+          </ion-card>
+        </ion-col>
+
+        <ion-col>
+          <ion-card>
+            <ion-item>
+              <ion-label stacked>Age</ion-label>
+              <ion-input type="text" [(ngModel)]="patientAge" formControlName="age" readonly></ion-input>
+            </ion-item>
+          </ion-card>
+        </ion-col>
+      </ion-row>
+
+
+      <ion-row>
+        <ion-col>
+          <ion-card>
+            <ion-item>
+              <ion-label stacked>Gender</ion-label>
+              <ion-input type="text" [(ngModel)]="patientGender" formControlName="gender" readonly></ion-input>
+            </ion-item>
+      </ion-card>
+      </ion-col>
+      </ion-row>
+
+      <ion-row>
+        <ion-col>
+          <ion-card>
+            <ion-item>
+              <ion-label stacked>State</ion-label>
+              <<ion-input type="text" [(ngModel)]="patientCountry" formControlName="country" readonly></ion-input>
+            </ion-item>
+      </ion-card>
+      </ion-col>
+      </ion-row>
+
+      <ion-row>
+        <ion-col>
+          <ion-card>
+            <ion-item>
+              <ion-label stacked>Hospital Reported</ion-label>
+              <<ion-input type="text" [(ngModel)]="patientHospitalReported" formControlName="hospitalReported" readonly></ion-input>
+            </ion-item>
+      </ion-card>
+      </ion-col>
+      </ion-row>
+
+      <p padding-left=8px>Date and Time Reported</p>
+      <ion-row>
+        <ion-col>
+          <ion-card>
+            <ion-item>
+              <ion-label stacked>Date</ion-label>
+              <ion-input type="date" displayFormat="MMM DD YYYY" [(ngModel)]="patientDateReported" formControlName="dateReported" readonly></ion-input>
+            </ion-item>
+          </ion-card>
+        </ion-col>
+
+        <ion-col>
+          <ion-card>
+            <ion-item>
+              <ion-label stacked>Time</ion-label>
+                <ion-input type="time" displayFormat="h:mm A" [(ngModel)]="patientTimeReported" formControlName="timeReported" readonly></ion-input>
+            </ion-item>
+          </ion-card>
+        </ion-col>
+      </ion-row>
+
+      <ion-card>
+        <ion-item>
+          <ion-label stacked>Status</ion-label>
+          <ion-input type="text" [(ngModel)]="patientStatus" formControlName="status" readonly></ion-input>
+        </ion-item>
+      </ion-card>
+
+      <ion-row>
+          <ion-col>
+            <ion-card>
+              <ion-item>
+                <ion-label stacked>Created By</ion-label>
+                <ion-input type="text" [(ngModel)]="patientCreatedBy" formControlName="createdby" readonly></ion-input>
+              </ion-item>
+            </ion-card>
+          </ion-col>
+  
+          <ion-col>
+            <ion-card>
+              <ion-item>
+                <ion-label stacked>Updated By</ion-label>
+                <ion-input type="text" [(ngModel)]="patientUpdatedBy" readonly formControlName="updatedby" *ngIf="isEdited" [disabled]='updatedBox' ></ion-input>
+              </ion-item>
+            </ion-card>
+          </ion-col>
+        </ion-row>
+
+      <ion-toolbar position="bottom">
+        <button ion-button round style="width: 100%">Save</button>
+      </ion-toolbar>
+    </ion-list>
+
+  </form>
+</ion-content>

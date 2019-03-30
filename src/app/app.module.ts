@@ -27,14 +27,34 @@ import { AuthProvider } from '../providers/auth/auth';
 import { MyApp } from './app.component';
 
 //Pages
-import { RegisterPage } from '../pages/register/register';
-import { HomePage } from './../pages/home/home';
+import { RegisterPage } from '../pages/Registration/register/register';
+import { LoginPage } from './../pages/login/login';
+import { ProfilePage } from '../pages/Registration/profile/profile';
+import { CaseListPage } from '../pages/NavigationBarPages/case-list/case-list';
+import { ChattingPage } from '../pages/NavigationBarPages/Chat/chatting/chatting';
+import { CloseCaseListPage } from '../pages/NavigationBarPages/close-case-list/close-case-list';
+import { MpClinicalPage } from './../pages/MP-Create-Update-Cases/mp-clinical/mp-clinical';
+import { MpSpeciesIdPage } from './../pages/MP-Create-Update-Cases/mp-species-id/mp-species-id';
+import { MpHistoryPage } from './../pages/MP-Create-Update-Cases/mp-history/mp-history';
+import { PatientDetailsPage } from './../pages/MP-Create-Update-Cases/mp-patient-details/patient-details';
+import { MpEventPage } from '../pages/MP-Create-Update-Cases/mp-event/mp-event';
+import { MpManagementPage } from '../pages/NavigationBarPages/mp-management/mp-management';
 
 @NgModule({
 	declarations: [
 		MyApp,
-		HomePage,
-		RegisterPage
+		RegisterPage,
+		LoginPage,
+		ProfilePage,
+		CaseListPage,
+		ChattingPage,
+		CloseCaseListPage,
+		MpClinicalPage,
+		MpSpeciesIdPage,
+		MpHistoryPage,
+		PatientDetailsPage,
+		MpEventPage,
+		MpManagementPage
 	],
 	imports: [
 		BrowserModule,
@@ -50,8 +70,18 @@ import { HomePage } from './../pages/home/home';
 	],
 	entryComponents: [
 		MyApp,
-		HomePage,
-		RegisterPage
+		RegisterPage,
+		LoginPage,
+		ProfilePage,
+		CaseListPage,
+		ChattingPage,
+		CloseCaseListPage,
+		MpClinicalPage,
+		MpSpeciesIdPage,
+		MpHistoryPage,
+		PatientDetailsPage,
+		MpEventPage,
+		MpManagementPage
 	],
 	providers: [
 		StatusBar,
