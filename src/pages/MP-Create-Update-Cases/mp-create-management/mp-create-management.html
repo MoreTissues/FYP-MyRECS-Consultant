@@ -1,0 +1,153 @@
+<ion-header>
+
+    <ion-navbar>
+      <ion-title>Management</ion-title>
+    </ion-navbar>
+  
+  </ion-header>
+  
+  
+  <ion-content>
+    <form [formGroup]="form">
+    <p padding-left=8px>Please fill in required details.</p>
+    <ion-item>
+        <ion-label>Case ID - </ion-label>
+        <ion-input type="text" formControlName="id" [(ngModel)]="caseID" readonly>{{caseID}}</ion-input>
+    </ion-item>
+
+    <h1 style='text-align: center'>Photo and Plan Treatment</h1>
+    <p padding-left=8px>Specimens Picture Uploaded</p>
+    <hr>
+    <ion-grid>
+      <ion-row>
+        <ion-col>
+          <ion-card class="block">
+            <img *ngIf="isEdited"  [src]="speciesSnake" style="width: 100%" />
+          </ion-card>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+    
+    <ion-list>
+      <ion-row>
+        <ion-col>
+          <ion-card>
+            <ion-item>
+              <ion-label stacked>What type of species</ion-label>
+              <ion-input type="text" [(ngModel)]="managementTypeSpecies" formControlName="typeSpecies"></ion-input>
+            </ion-item>
+      </ion-card>
+      </ion-col>
+      </ion-row>
+  
+      <ion-row>
+        <ion-col>
+          <ion-card>
+            <ion-item>
+              <ion-label stacked>Antivenom Recommended</ion-label>
+              <ion-input type="text" [(ngModel)]="managementAntivenomRecommended" formControlName="antivenomRecommended"></ion-input>
+            </ion-item>
+      </ion-card>
+      </ion-col>
+      </ion-row>
+
+      <ion-row>
+          <ion-col>
+            <ion-card>
+              <ion-item>
+                <ion-label stacked>Plan Treatment</ion-label>
+                <ion-input type="text" [(ngModel)]="managementPlan" formControlName="plan"></ion-input>
+              </ion-item>
+        </ion-card>
+        </ion-col>
+        </ion-row>
+    </ion-list>
+    <hr>
+    <!-- <p padding-left=8px>Plan Treatment</p>
+  
+    <ion-list-header>
+        Swipe left to delete
+        <button item-end ion-button icon-only clear (click)="addItem()">
+          <ion-icon color="primary" name="add-circle"></ion-icon>
+        </button>
+      </ion-list-header>
+      <ion-item-sliding *ngFor="let item of items; let i = index; ">
+        <ion-item>
+          {{item.title}}
+        </ion-item>
+        <ion-item-options icon-start (ionSwipe)="deleteItem(items, i)">
+          <button color="danger" ion-button expandable (click)="deleteItem(items, i)">
+            <ion-icon name="trash"></ion-icon>
+          </button>
+        </ion-item-options>
+  </ion-item-sliding> -->
+  
+    <h1 style='text-align: center'>Verify Type Of Snake</h1>
+    <ion-grid>
+        <ion-row>
+          <ion-col *ngFor="let snake of optionsSnakes">
+            <img src = {{snake.pic}} alt="" style="width: 180px; height: 100px;">
+            <ion-item>
+            <ion-label style="text-align: center; font-size: 10px">{{snake.name}}</ion-label>
+            <!-- <ion-checkbox color="dark" (click)="selectMember(snake)" [(ngModel)]="snake.checked" formControlName="snake"></ion-checkbox> -->
+          </ion-item>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+
+      <ion-card>
+          <ion-item>
+            <ion-label>Please Only Choose 1</ion-label>
+            <ion-select [(ngModel)]="managementSnakeChoosen" formControlName="snakeChoosen" >
+              <ion-option value="Bungarus Candidus">Bungarus Candidus</ion-option>
+              <ion-option value="Bungarus Fasciatus">Bungarus Fasciatus</ion-option>
+              <ion-option value="Calliophis Bivirgatus">Calliophis Bivirgatus</ion-option>
+              <ion-option value="Garthius Chaseni">Garthius Chaseni</ion-option>
+              <ion-option value="Naja Sumatrana">Naja Sumatrana</ion-option>
+              <ion-option value="Trimeresurus Wiroti">Trimeresurus Wiroti</ion-option>
+              <ion-option value="Python Breitensteini">Python Breitensteini</ion-option>
+              <ion-option value="Trimeresurus Sabahi">Trimeresurus Sabahi</ion-option>
+            </ion-select>
+          </ion-item>
+        </ion-card>
+  
+    <hr>
+    <h1 style='text-align: center'>Snake Choosen</h1>
+
+    <ion-list>
+        <ion-row>
+          <ion-col>
+            <ion-card>
+              <ion-item>
+                <ion-label stacked>Working Diagnosis</ion-label>
+                <ion-input type="text" [(ngModel)]="managementWorkingDiagnosis" formControlName="workingDiagnosis"></ion-input>
+              </ion-item>
+        </ion-card>
+        </ion-col>
+        </ion-row>
+    
+        <ion-row>
+          <ion-col>
+            <ion-card>
+              <ion-item>
+                <ion-label stacked>Comments</ion-label>
+                <ion-input type="text" [(ngModel)]="managementComments" formControlName="comments"></ion-input>
+              </ion-item>
+        </ion-card>
+        </ion-col>
+        </ion-row>
+      </ion-list>
+  
+      
+    
+    
+  </form>
+  <!-- <button ion-button round style="width: 100%" (click)='upload()'>Take Picture</button> -->
+  </ion-content>
+  
+  <ion-footer>
+      <ion-toolbar position="bottom">
+          <button ion-button round style="width: 100%" (click)='saveEntry()'>Create Management</button>
+        </ion-toolbar>
+  </ion-footer>
+  

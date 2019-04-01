@@ -8,39 +8,71 @@
   </ion-navbar>
 
   <ion-item>
-      <p>Welcome: {{(profileData | async)?.username}}</p>
-      <!-- <button class="add" ion-button item-right icon-right margin-bottom color="primary"
-          (click)="openAddCaseListPage()">
-          Add a new consultant case
-          <ion-icon name="add"></ion-icon>
-      </button> -->
+      <ion-label>Welcome: {{(profileData | async)?.username}}</ion-label>
       
   </ion-item>
+
 </ion-header>
 
 <ion-content>
-  <ion-searchbar animated></ion-searchbar>
-  <hr>
-  <ion-label padding-left=8px><b>VIEW: </b></ion-label>
-  <button ion-button color="primary" item-right (click)="loadPatientDetails()">Patient</button>
-  <button ion-button color="primary" item-right (click)="loadEventDetails()">Event</button>
-  <button ion-button color="primary" item-right (click)="loadHistoryDetails()">History</button>
-  <button ion-button color="primary" item-right (click)="loadSpeciesDetails()">Species</button>
-  <button ion-button color="primary" item-right (click)="loadClinicalDetails()">Clinical</button>
-  <button ion-button color="primary" item-right (click)="loadDefault()">Default</button>
-
-  <button ion-button color="primary" hidden item-right (click)="sendNotificationWithActionButtonsAndDeepLink()">Send Noti</button>
-  <button ion-button color="primary" hidden item-right (click)="sendNotificationwithImage()">Send Noti</button>
-  <ion-item *ngFor="let item of items">
-      <ion-toggle color="danger" checked="true" item-left></ion-toggle>
-      <ion-label> {{ item.caseID }} </ion-label>
-      <button ion-button color="primary" item-right (click)="editPatient({ record: item })" [disabled]="disableButtonPatient">P</button>
-      <button ion-button color="primary" item-right (click)="editEvent({ record: item })" [disabled]="disableButtonEvent">E</button>
-      <button ion-button color="primary" item-right (click)="editHistory({ record: item })" [disabled]="disableButtonHistory">H</button>
-      <button ion-button color="primary" item-right (click)="editSpecies({ record: item })" [disabled]="disableButtonSpecies" >S</button>
-      <button ion-button color="primary" item-right disabled >M</button>
-      <button ion-button color="primary" item-right (click)="editClinical({ record: item })"[disabled]="disableButtonClinical" >C</button>
-      <button ion-button color="danger" item-right (click)="editPatient({ record: item })" disabled>D</button>
+     
+    <ion-item>
+          <ion-searchbar animated></ion-searchbar>
+          <button ion-button icon-only item-end clear (click)="presentActionSheet()">
+                  <ion-icon name="more"></ion-icon>
+          </button>
+    </ion-item>
+  
+  <ion-item>
+          <ion-label><b>Press on the triple dot to activate Edit Buttons</b></ion-label>
   </ion-item>
+  
+  
+    <ion-list>
+            <ion-item-sliding *ngFor="let item of items">
+              <ion-item>
+                <ion-thumbnail item-start>
+                    <img src="../../../assets/imgs/green.png">
+                </ion-thumbnail>
+                <h2>Case Number: {{item.caseID}}</h2>
+                <button ion-button color="secondary" icon-left item-right (click)="addManagement({ record: item })">
+                        <ion-icon name='arrow-forward'></ion-icon>
+                        Add Management Case
+                    </button>
+              </ion-item>
+
+              <ion-item-options side="right">
+                <button *ngIf="ButtonPatient"  ion-button color="secondary" (click)="editPatient({ record: item })">
+                Patient
+
+                </button>
+                <button *ngIf="ButtonEvent"  ion-button color="primary" (click)="editEvent({ record: item })">
+                Event
+                </button>
+
+                <button *ngIf="ButtonHistory"  ion-button color="danger" (click)="editHistory({ record: item })">
+                History
+                </button>
+                      
+                     <button *ngIf="ButtonSpecies"  ion-button color="primary" (click)="editSpecies({ record: item })">
+                           
+                                    Species
+                             </button>
+                    <button *ngIf="ButtonClinical"  ion-button color="secondary" (click)="editClinical({ record: item })">
+                       
+                                Clinical
+                         </button>
+
+                        </ion-item-options>
+            </ion-item-sliding>
+
+        </ion-list>
+
+        <ion-fab bottom right>
+          <button ion-fab class="pop-in" color="dark" (click)="openAddCaseListPage()" >
+              <ion-icon name='paw' is-active="false" ></ion-icon>
+          </button>
+          
+      </ion-fab>
 
 </ion-content>

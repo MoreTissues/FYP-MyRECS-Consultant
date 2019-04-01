@@ -1,3 +1,4 @@
+import { MpManagementPage } from './../pages/NavigationBarPages/mp-management/mp-management';
 import { ChattingPage } from './../pages/NavigationBarPages/Chat/chatting/chatting';
 import { CaseListPage } from './../pages/NavigationBarPages/case-list/case-list';
 import { Nav, Platform } from 'ionic-angular';
@@ -34,6 +35,7 @@ export class MyApp {
 		this.pages = [
 			{ title: 'Cases List', component: CaseListPage },
 			{ title: 'Closed Cases List', component: CaseListPage },
+			{ title: 'Case Management', component: MpManagementPage },
 			{ title: 'Report and Statistics', component: CaseListPage },
 			{ title: 'Snake Gallery', component: CaseListPage },
 			{ title: 'Chat', component: ChattingPage },

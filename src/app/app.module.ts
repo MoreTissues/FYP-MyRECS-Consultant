@@ -39,6 +39,7 @@ import { MpHistoryPage } from './../pages/MP-Create-Update-Cases/mp-history/mp-h
 import { PatientDetailsPage } from './../pages/MP-Create-Update-Cases/mp-patient-details/patient-details';
 import { MpEventPage } from '../pages/MP-Create-Update-Cases/mp-event/mp-event';
 import { MpManagementPage } from '../pages/NavigationBarPages/mp-management/mp-management';
+import { MpCreateManagementPage } from './../pages/MP-Create-Update-Cases/mp-create-management/mp-create-management';
 
 @NgModule({
 	declarations: [
@@ -54,7 +55,8 @@ import { MpManagementPage } from '../pages/NavigationBarPages/mp-management/mp-m
 		MpHistoryPage,
 		PatientDetailsPage,
 		MpEventPage,
-		MpManagementPage
+		MpManagementPage,
+		MpCreateManagementPage
 	],
 	imports: [
 		BrowserModule,
@@ -81,7 +83,8 @@ import { MpManagementPage } from '../pages/NavigationBarPages/mp-management/mp-m
 		MpHistoryPage,
 		PatientDetailsPage,
 		MpEventPage,
-		MpManagementPage
+		MpManagementPage,
+		MpCreateManagementPage
 	],
 	providers: [
 		StatusBar,
